@@ -1,0 +1,14 @@
+﻿@model BookModel
+@{
+    ViewData["Title"] = "Apagar livro";
+}
+
+<div class="text-center">
+    <h3>Realmente deseja excluir esse livro? (@Model.NameBook)</h3>
+</div>
+
+<form asp-controller="Livro" asp-action="ApagarLivro" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger w-100" style="margin-bottom: 5px;">Confirmar exclusão</button>
+</form>
+<a class="btn btn-primary w-100" asp-controller="Livro" asp-action="Index" role="button">Cancelar exclusão</a>
